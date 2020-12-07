@@ -1,8 +1,12 @@
 -- 这句在执行创建脚本之前要执行，要不然12c以后，创建用户要加c++用户名：比如c++hr
 alter session set "_ORACLE_SCRIPT"=true;
 
--- ?指向 ORACLE_HOME 路径
+-- 创建hr用户及表结构
 @?/demo/schema/human_resources/hr_main.sql
-
 -- 指定脚本输出日志目录
 /u01/app/oracle/product/12.2.0/dbhome_1/demo/schema/log/
+
+-- 创建scott用户及表结构
+@?/rdbms/admin/utlsampl.sql
+
+-- 实际上?指向 ORACLE_HOME 路径
